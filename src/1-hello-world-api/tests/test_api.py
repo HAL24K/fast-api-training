@@ -11,7 +11,7 @@ def test_index():
     assert response.json() == {"Hello": "World"}
 
 
-def test_get_items():
+def test_get_item():
     pass
 
 
