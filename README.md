@@ -8,32 +8,46 @@ A repo dedicated to training the team the concepts around Fast API development
 $ cd 1-hello-world-api
 ```
 
-Setup virtual environment
+## Setup Virtual Environment
 
 ```shell
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 ```
 
-Install requirements
+## Install Requirements
 
 ```shell
 $ pip install -r requirements.txt
 ```
 
-Run the API
+## Run the API
 
 ```shell
-uvicorn main:app --reload
+$ uvicorn app.main:app --reload
 ```
 
 Navigate to `http://127.0.0.1:8000/items/1`
+
+## Run the Tests
+
+```shell
+$ pytest tests
+```
+
+## Run Tests with Coverage Report
+
+```shell
+$ pytest --cov app
+```
+
+# Exercises
 
 ## Exercise 1
 
 Write a test for `get_item` function.
 
-# Exercise 2
+## Exercise 2
 
 Create a new endpoint which returns all items.
 
