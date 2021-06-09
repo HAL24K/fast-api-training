@@ -4,8 +4,8 @@ A repo dedicated to training the team the concepts around Fast API development.
 
 # Prerequisites
 
-- Python 3.8
-- Docker: See [Install Instructions](./docs/DOCKER_PIPENV.md)
+- Python 3.8 [Install Instructions](./docs/INSTALL_PYTHON.md)
+- Docker: See [Install Instructions](./docs/INSTALL_DOCKER.md)
 - Pipenv: See [Install Instructions](./docs/INSTALL_PIPENV.md)
 
 # 1 - Hello World Fast API
