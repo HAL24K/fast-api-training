@@ -8,7 +8,7 @@ A repo dedicated to training the team the concepts around Fast API development.
 - Docker: See [Install Instructions](docs/DOCKER_PIPENV.md)
 - Pipenv: See [Install Instructions](docs/INSTALL_PIPENV.md)
 
-# 1 - Hello Wor'''''ld Fast API
+# 1 - Hello World Fast API
 
 In this lesson we will learn about the basics of creating a RESTful API with the [FastAPI](https://fastapi.tiangolo.com/) micro-web framework.
 
