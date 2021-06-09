@@ -5,8 +5,8 @@ A repo dedicated to training the team the concepts around Fast API development.
 # Prerequisites
 
 - Python 3.8
-- Docker: See [Install Instructions](docs/DOCKER_PIPENV.md)
-- Pipenv: See [Install Instructions](docs/INSTALL_PIPENV.md)
+- Docker: See [Install Instructions](./docs/DOCKER_PIPENV.md)
+- Pipenv: See [Install Instructions](./docs/INSTALL_PIPENV.md)
 
 # 1 - Hello World Fast API
 
@@ -103,7 +103,7 @@ $ cd src/2-pydantic-models
 
 ## Install Requirements with Pipenv
 
-See [Pipenv install instructions](docs/INSTALL_PIPENV.md).
+See [Pipenv install instructions](./docs/INSTALL_PIPENV.md).
 
 Run the command below to install the dependencies along with the development dependencies.
 
