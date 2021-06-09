@@ -1,4 +1,5 @@
 from typing import List
+import uuid
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
@@ -14,7 +15,12 @@ def handle_invalid_usage(response, error):
     return JSONResponse(error.to_dict(), status_code=error.status_code)
 
 
+"""Exercise 1"""
 items = [{'name': 'John', 'age': 45}, {'name': 'Nancy', 'age': 23}]
+
+
+def _get_item(item_id):
+    return next(filter(lambda item: item.id == item_id, items))
 
 
 @app.get("/", response_model=models.ResponseModel)
@@ -23,33 +29,32 @@ def read_root():
 
 
 @app.get("/items/{item_id}", response_model=models.PersonModel)
-def get_item(item_id: int):
-    """Exercise 1"""
+def get_item(item_id: uuid.UUID):
     try:
-        return items[item_id]
-    except IndexError:
+        return _get_item(item_id)
+    except StopIteration:
         raise exceptions.EntityNotFound("Item not found")
 
 
 @app.get("/items", response_model=List[models.PersonModel])
 def get_items():
-    """Exercise 2"""
-    pass
+    return items
 
 
 @app.post("/items")
 def add_item(person: dict):
-    """Exercise 3"""
-    pass
+    """Exercise 2"""
+    items.append(person)
 
 
 @app.put("/items/{item_id}")
-def update_item():
-    """Exercise 4"""
-    pass
+def update_item(item_id: uuid.UUID, address: dict):
+    """Exercise 3"""
+    item = _get_item(item_id)
 
 
 @app.delete("/items/{item_id}")
-def delete_item():
+def delete_item(item_id: uuid.UUID):
     """Exercise 5"""
-    pass
+    item = _get_item(item_id)
+    items.remove(item)

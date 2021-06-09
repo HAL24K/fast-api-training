@@ -118,3 +118,25 @@ pipenv shell
 ```
 
 # Exercises
+
+## Exercise 1
+
+Open the `app/main.py` file.
+
+Look for the `items` variable, change the dict values into Pydantic models using the `PersonModel`
+
+## Exercise 2
+
+Replace `dict` with the `PersonModel` to validate an object posted to the `/items` endpoint.
+
+## Exercise 3
+
+Create a new `AddressModel ` used for updating a person's address while maintaining their original Uuid.
+
+The new model should contain the following fields:
+
+- street: string - default to empty string
+- house_no: string - default to empty string
+- postal_code: string - default to empty string
+- city: string - default to empty string
+- country: string - default to empty string
