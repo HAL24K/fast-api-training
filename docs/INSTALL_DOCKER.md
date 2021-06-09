@@ -1,6 +1,6 @@
 # Install Docker
 
-## Mac
+## MacOs
 
 Install [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/)
 
