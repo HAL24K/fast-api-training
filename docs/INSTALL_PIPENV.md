@@ -5,7 +5,7 @@ We will also introduce the [Pipenv](https://pipenv.pypa.io/en/latest/#install-pi
 ### Install with Pip
 
 ```shell
-pip install --user pipenv
+pip3 install --user pipenv
 ```
 
 ### Install with Pipx
