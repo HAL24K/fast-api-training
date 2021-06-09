@@ -5,12 +5,12 @@ A repo dedicated to training the team the concepts around Fast API development.
 # Prerequisites
 
 - Python 3.8
-- Docker: See (Install Instructions)[docs/DOCKER_PIPENV.md]
-- Pipenv: See (Install Instructions)[docs/INSTALL_PIPENV.md]
+- Docker: See [Install Instructions](docs/DOCKER_PIPENV.md)
+- Pipenv: See [Install Instructions](docs/INSTALL_PIPENV.md)
 
 # 1 - Hello Wor'''''ld Fast API
 
-In this lesson we will learn about the basics of creating a RESTful API with the (FastAPI)[https://fastapi.tiangolo.com/] micro-web framework.
+In this lesson we will learn about the basics of creating a RESTful API with the [FastAPI](https://fastapi.tiangolo.com/) micro-web framework.
 
 ```shell
 $ cd src/1-hello-world-api
@@ -95,7 +95,7 @@ Write a test to check that the item is deleted.
 
 # 2 - Pydantic Models
 
-In this lesson we'll discuss creating (Pydantic)[https://pydantic-docs.helpmanual.io/] data models for data integrity and validation.
+In this lesson we'll discuss creating [Pydantic](https://pydantic-docs.helpmanual.io/) data models for data integrity and validation.
 
 ```shell
 $ cd src/2-pydantic-models
@@ -103,7 +103,7 @@ $ cd src/2-pydantic-models
 
 ## Install Requirements with Pipenv
 
-See (Pipenv install instructions)[docs/INSTALL_PIPENV.md].
+See [Pipenv install instructions](docs/INSTALL_PIPENV.md).
 
 Run the command below to install the dependencies along with the development dependencies.
 
