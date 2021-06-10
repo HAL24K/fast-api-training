@@ -10,7 +10,8 @@ A repo dedicated to training the team the concepts around Fast API development.
 
 # 1 - Hello World Fast API
 
-In this lesson we will learn about the basics of creating a RESTful API with the [FastAPI](https://fastapi.tiangolo.com/) micro-web framework.
+In this lesson we will learn about the basics of creating a RESTful API with the
+[FastAPI](https://fastapi.tiangolo.com/) micro-web framework.
 
 ```shell
 $ cd src/1-hello-world-api
@@ -55,7 +56,8 @@ $ pytest --cov app
 
 # Exercises
 
-Below are coding exercises to be completed with your group. See the [FastAPI documentation](https://fastapi.tiangolo.com/) for reference.
+Below are coding exercises to be completed with your group. See the
+[FastAPI documentation](https://fastapi.tiangolo.com/) for reference.
 
 ## Exercise 1
 
@@ -95,7 +97,8 @@ Write a test to check that the item is deleted.
 
 # 2 - Pydantic Models
 
-In this lesson we'll discuss creating [Pydantic](https://pydantic-docs.helpmanual.io/) data models for data integrity and validation.
+In this lesson we'll discuss creating [Pydantic](https://pydantic-docs.helpmanual.io/) data models
+for data integrity and validation.
 
 ```shell
 $ cd src/2-pydantic-models
@@ -155,7 +158,8 @@ Replace the generic `dict` type with the `PersonModel` to validate an object pos
 
 Open the `app/models.py` file.
 
-Update only the `AddressModel ` used for updating a person's address while maintaining their original Uuid, name and age properties.
+Update only the `AddressModel ` used for updating a person's address while maintaining their original Uuid,
+name and age properties.
 
 The new model should contain the following fields:
 
@@ -168,5 +172,60 @@ The new model should contain the following fields:
 # Fast API with Domain Driven Design (DDD)
 
 ```shell
-cd src/3-ddd-api
+$ cd src/3-ddd-api
+```
+
+The code in this example follows the [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design)
+pattern.
+
+In short, Domain-driven design (DDD) is the concept that the structure and language of software code (class names,
+class methods, class variables) should match the business domain. For example, if a software processes
+loan applications, it might have classes such as LoanApplication and Customer, and methods such as AcceptOffer and Withdraw.
+
+In this example the domain classes are stored in the `apps/api/domain` directory as pure classes. The persistence layer is handled
+via `adapters` which are abstracted into their own classes. These are located in the `apps/api/adapters` directory.
+
+The `Context` class loads the correct adapters, commands, and messagebus
+
+# Install Dependencies
+
+```shell
+$ pipenv install --dev
+$ pipenv shell
+```
+
+# Run the Tests
+
+```shell
+$ pytest tests
+```
+
+# Applications
+
+To show how DDD can be used in multiple applications, there is a RESTful API using FastAPI,
+and a CLI using Click.
+
+## FastApi
+
+In a separate shell you can run the following command to start the FastAPI implementation.
+
+```shell
+$ uvicorn apps.api.entrypoint:app --reload
+```
+
+## Click
+
+In another shell you can run the following command to get and add a person to the same person repository
+used in the FastAPI implementation.
+
+### Add Person
+
+```shell
+PYTHONPATH=. python apps/cli/people.py add Henry 45
+```
+
+### Get Person
+
+```shell
+PYTHONPATH=. python apps/cli/people.py get 60c2866a704fb00b25276344
 ```
