@@ -15,8 +15,8 @@ def handle_invalid_usage(response, error):
     return JSONResponse(error.to_dict(), status_code=error.status_code)
 
 
-"""Exercise 1"""
-items = [{'name': 'John', 'age': 45}, {'name': 'Nancy', 'age': 23}]
+"""Exercise 1 - instantiate PersonModel"""
+items = [{"name": "John", "age": 45}, {"name": "Nancy", "age": 23}]
 
 
 def _get_item(item_id):
@@ -43,14 +43,17 @@ def get_items():
 
 @app.post("/items")
 def add_item(person: dict):
-    """Exercise 2"""
+    """Exercise 2 - Use PersonModel"""
     items.append(person)
+    return person
 
 
 @app.put("/items/{item_id}")
 def update_item(item_id: uuid.UUID, address: dict):
-    """Exercise 3"""
+    """Exercise 3 - Use AddressModel"""
     item = _get_item(item_id)
+    item.address = address
+    return item
 
 
 @app.delete("/items/{item_id}")

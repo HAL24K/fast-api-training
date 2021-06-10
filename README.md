@@ -55,7 +55,7 @@ $ pytest --cov app
 
 # Exercises
 
-Below are coding exercises to be completed with your group.
+Below are coding exercises to be completed with your group. See the [FastAPI documentation](https://fastapi.tiangolo.com/) for reference.
 
 ## Exercise 1
 
@@ -108,16 +108,30 @@ See [Pipenv install instructions](./docs/INSTALL_PIPENV.md).
 Run the command below to install the dependencies along with the development dependencies.
 
 ```shell
-pipenv install --dev
+$ pipenv install --dev
 ```
 
 Once the dependencies are installed, you will need to start the Pipenv shell.
 
 ```shell
-pipenv shell
+$ pipenv shell
+```
+
+# Run the App
+
+Like in the previous example, start the app with:
+
+```shell
+$ uvicorn app.main:app --reload
 ```
 
 # Exercises
+
+When you complete the exercises below, the tests should all pass
+
+```shell
+$ pytest tests
+```
 
 ## Exercise 1
 
@@ -125,13 +139,23 @@ Open the `app/main.py` file.
 
 Look for the `items` variable, change the dict values into Pydantic models using the `PersonModel`
 
+Hint: set one item to use a fixed uuid value of `5152cda2-db25-4338-8ffa-77923f2c885f`.
+
+```python
+uuid.UUID("5152cda2-db25-4338-8ffa-77923f2c885f")
+```
+
 ## Exercise 2
 
-Replace `dict` with the `PersonModel` to validate an object posted to the `/items` endpoint.
+Open the `app/main.py` file.
+
+Replace the generic `dict` type with the `PersonModel` to validate an object posted to the `/items` endpoint.
 
 ## Exercise 3
 
-Create a new `AddressModel ` used for updating a person's address while maintaining their original Uuid.
+Open the `app/models.py` file.
+
+Update only the `AddressModel ` used for updating a person's address while maintaining their original Uuid, name and age properties.
 
 The new model should contain the following fields:
 
@@ -140,3 +164,9 @@ The new model should contain the following fields:
 - postal_code: string - default to empty string
 - city: string - default to empty string
 - country: string - default to empty string
+
+# Fast API with Domain Driven Design (DDD)
+
+```shell
+cd src/3-ddd-api
+```

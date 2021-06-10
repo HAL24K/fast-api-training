@@ -8,13 +8,13 @@ class ResponseModel(BaseModel):
 
 
 class AddressModel(BaseModel):
-    """Execrise 3"""
+    """Execrise 3 - Define properties"""
 
     pass
 
 
 class PersonModel(BaseModel):
-    id: uuid.UUID = Field(default=uuid.uuid4())
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
     name: str
     age: int
     address: AddressModel = Field(default=AddressModel())
