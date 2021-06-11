@@ -2,6 +2,11 @@
 
 A repo dedicated to training the team the concepts around Fast API development.
 
+## Slide deck
+A slide deck accompanies the code. The pdf export is contained in the root directory.
+
+The [Google Slides](https://drive.google.com/file/d/1E5qEdA12RTZ7xKqRo_MKw2aKvyLAXLZ1/view?usp=sharing) are available to those in the company.
+
 # Prerequisites
 
 - Python 3.8: See [Install Instructions](./docs/INSTALL_PYTHON.md)
